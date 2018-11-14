@@ -48,6 +48,29 @@ public class Contact {
         _notes = notes;
     }
 
+    Contact(int id, String name, String firstname, String phone, String email, String address,
+            String notes, Date birth){
+        _id = id;
+        _name = name;
+        _firstname = firstname;
+        _email = email;
+        _address = address;
+        _phone = phone;
+        _notes = notes;
+        _birth = birth;
+    }
+
+    Contact(String name, String firstname, String phone, String email, String address, String notes,
+            Date birth){
+        _name = name;
+        _firstname = firstname;
+        _email = email;
+        _address = address;
+        _phone = phone;
+        _notes = notes;
+        _birth = birth;
+    }
+
     public void setBirth( Date birth ){ _birth = birth; }
     public void setNotes( String notes ){ _notes = notes; }
 
@@ -61,6 +84,9 @@ public class Contact {
     public Date getBirth(){ return (_birth); }
 
     public String toString() {
-        return _firstname + _name + "\n\t" + _phone;
+        String str;
+
+        str = _firstname + " " + _name;
+        return str;
     }
 }
