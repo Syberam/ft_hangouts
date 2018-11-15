@@ -6,52 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:id="@+id/previewScrollview"
+    <ImageButton
+        android:id="@+id/btnContact"
+        style="@android:style/Widget.DeviceDefault.Light.ImageButton"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="4dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/round_button"
+        android:contentDescription="@string/add_contact"
+        android:scaleType="fitCenter"
+        android:text=""
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerContacts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
-        android:background="@color/colorPrimaryDark">
-
-        <LinearLayout
-            android:id="@+id/contactInfoView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="@dimen/cardview_default_elevation"
-            android:paddingBottom="@dimen/cardview_default_elevation">
-
-            <TextView
-                android:id="@+id/txtContactPreView"
-                android:layout_width="218dp"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-            <TextView
-                android:id="@+id/txtPhoneView"
-                android:layout_width="138dp"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-                android:gravity="center_vertical|center_horizontal"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse" />
-
-        </LinearLayout>
-
-    </ScrollView>
-
-    <Button
-        android:id="@+id/btnContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="New Contact" />
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp" />
 
 
 </RelativeLayout>

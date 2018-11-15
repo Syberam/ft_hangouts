@@ -3,10 +3,13 @@ package com.sbonnefo.ft_hangouts;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -17,8 +20,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
    // private LinearLayout _lytContactsView;
-    private TextView _contactPreView, _phonePreView;
-    private Button btnGoContact;
+    private RecyclerView    recyclerViewContacts;
+    private ImageButton     btnGoContact;
     private DatabaseManager _databaseManager;
 
 
@@ -27,9 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView( R.layout.activity_main );
 
-        _contactPreView = (TextView) findViewById( R.id.txtContactPreView);
-        _phonePreView = (TextView) findViewById( R.id.txtPhoneView);
-        btnGoContact = (Button) findViewById( R.id.btnContact);
+        btnGoContact = (ImageButton) findViewById( R.id.btnContact);
 
         btnGoContact.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,21 +41,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        //_lytContactsVieux = ()
         _databaseManager = new DatabaseManager( this );
-//        Contact ctct = new Contact("BARELLE", "Margaux",
-//                "0613492146", "mago@gmail.com", "here");
-//        _databaseManager.insertContact(ctct);
+        // Contact ctct = new Contact("BARELLE", "Margaux",
+        //          "0613492146", "mago@gmail.com", "here");
+        //     _databaseManager.insertContact(ctct);
 
 
         List<Contact> contacts = _databaseManager.getContacts();
-        for (int i = 0; i <100 ; i++){
-            for (Contact contact : contacts){
-                _contactPreView.append( contact.toString() + "\n");
-                _phonePreView.append( contact.getPhone() + "\n");
-            }
-        }
+
+
+        recyclerViewContacts = (RecyclerView) findViewById(R.id.recyclerContacts);
+        recyclerViewContacts.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewContacts.setAdapter(new ContactsPreviewAdapter(contacts));
+
+
 
         _databaseManager.close();
     }

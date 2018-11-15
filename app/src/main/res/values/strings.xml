@@ -10,4 +10,8 @@
     <string name="address">Address</string>
     <string name="notes">Notes</string>
     <string name="birth">Birthday</string>
+    <string name="add_contact">Add a new Contact</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="edit_contact">Edit Contact</string>
+    <string name="make_call">Call</string>
 </resources>
