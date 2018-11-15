@@ -3,7 +3,7 @@ package com.sbonnefo.ft_hangouts;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class contactCard extends AppCompatActivity {
+public class ContactEdit extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

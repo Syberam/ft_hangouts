@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         btnGoContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, contactCard.class );
-                //Intent.putExtra("message", txtInputData.getText().toString() );
+                Intent intent = new Intent(MainActivity.this, ContactEdit.class );
+                //Intent.putExtra( "Contact", contact );
                 startActivity(intent);
             }
         });
