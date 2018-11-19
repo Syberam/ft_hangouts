@@ -14,4 +14,8 @@
     <string name="send_sms">Send SMS</string>
     <string name="edit_contact">Edit Contact</string>
     <string name="make_call">Call</string>
+    <string name="img_avatar">Contact Picture</string>
+    <string name="delete_contact">Delete Contact</string>
+    <string name="toast_empty_field">Empty firstname, lastname or phone number</string>
+    <string name="toast_contact_save">New contact saved : %s</string>
 </resources>

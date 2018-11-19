@@ -20,7 +20,7 @@
         android:background="@drawable/ic_launcher_background">
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btnSave"
             android:layout_width="42dp"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"

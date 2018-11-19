@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerContacts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        tools:listitem="@layout/recycler_view_item" />
+
     <ImageButton
         android:id="@+id/btnContact"
         style="@android:style/Widget.DeviceDefault.Light.ImageButton"
@@ -23,17 +35,6 @@
         android:scaleType="fitCenter"
         android:text=""
         app:srcCompat="@android:drawable/ic_menu_add" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerContacts"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" />
 
 
 </RelativeLayout>
