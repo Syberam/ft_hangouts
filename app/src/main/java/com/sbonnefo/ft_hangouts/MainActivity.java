@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView    recyclerViewContacts;
     private ImageButton     btnGoContact;
     private DatabaseManager _databaseManager;
+    private Date            _pauseDate;
+    private boolean         _toastDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,18 +40,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        _databaseManager = new DatabaseManager( this );
+        refreshList();
 
-        List<Contact> contacts = _databaseManager.getContacts();
+        _toastDate = false;
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        _pauseDate = Calendar.getInstance().getTime();
+        _toastDate = true;
+    }
 
-        recyclerViewContacts = (RecyclerView) findViewById(R.id.recyclerContacts);
-        recyclerViewContacts.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewContacts.setAdapter(new ContactsPreviewAdapter(contacts));
-
-
-
-        _databaseManager.close();
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (_toastDate) {
+            for (int i = 0; i < 3; i++) {
+                Toast.makeText(this, _pauseDate.toString(), Toast.LENGTH_LONG).show();
+            }
+        }
+        refreshList();
     }
 
     @Override
@@ -65,5 +78,18 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void refreshList(){
+        _databaseManager = new DatabaseManager( this );
+
+        List<Contact> contacts = _databaseManager.getContacts();
+
+
+        recyclerViewContacts = (RecyclerView) findViewById(R.id.recyclerContacts);
+        recyclerViewContacts.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewContacts.setAdapter(new ContactsPreviewAdapter(contacts));
+
+        _databaseManager.close();
     }
 }

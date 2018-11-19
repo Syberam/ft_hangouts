@@ -31,8 +31,6 @@ public class ContactEdit extends AppCompatActivity {
 
     }
 
-
-
     private View.OnClickListener btnSaveListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -56,6 +54,7 @@ public class ContactEdit extends AppCompatActivity {
                         getString(R.string.toast_contact_save, _firstname + " " + _lastname)
                         , Toast.LENGTH_LONG).show();
                 databaseManager.close();
+                finish();
             }
         }
     };

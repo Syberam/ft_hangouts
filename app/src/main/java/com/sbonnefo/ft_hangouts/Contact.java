@@ -2,9 +2,10 @@ package com.sbonnefo.ft_hangouts;
 
 import android.media.Image;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Contact {
+public class Contact implements Serializable {
     private int _id;
     private String _name, _firstname, _email, _address, _phone, _notes;
     private Image _avatar;
@@ -18,6 +19,8 @@ public class Contact {
         _address = address;
         _phone = phone;
         _notes = "";
+        _avatar = null;
+        _birth = null;
     }
 
     Contact(int id, String name, String firstname, String phone, String email, String address){
@@ -28,6 +31,8 @@ public class Contact {
         _address = address;
         _phone = phone;
         _notes = "";
+        _avatar = null;
+        _birth = null;
     }
 
 
@@ -39,6 +44,8 @@ public class Contact {
         _address = address;
         _phone = phone;
         _notes = notes;
+        _avatar = null;
+        _birth = null;
     }
 
 
@@ -87,6 +94,7 @@ public class Contact {
     public String   getNotes(){ return (_notes); }
     public Date     getBirth(){ return (_birth); }
     public Image    getAvatar(){ return (_avatar); }
+
 
     public String toString() {
         String str;

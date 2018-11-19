@@ -15,6 +15,7 @@ public class ContactsPreviewAdapter extends RecyclerView.Adapter<PreviewViewHold
         _contacts = contacts;
     }
 
+
     @Override
     public PreviewViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View    view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recycler_view_item,
