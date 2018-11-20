@@ -81,6 +81,11 @@ public class Contact implements Serializable {
         _birth = birth;
     }
 
+    public void setName( String name ){_name = name; }
+    public void setFirtname( String firstname ){ _firstname = firstname; }
+    public void setEmail( String email ){ _email = email; }
+    public void setAddress( String address ){ _address = address; }
+    public void setPhone( String phone ){ _phone = phone; }
     public void setBirth( Date birth ){ _birth = birth; }
     public void setNotes( String notes ){ _notes = notes; }
     public void setAvatar( Image avatar ){ _avatar = avatar; }

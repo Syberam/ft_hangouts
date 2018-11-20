@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class PreviewViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-    private Contact         _contact;
+    private Contact     _contact;
     private ImageButton _btnEdit, _btnCall, _btnSms;
     private TextView    _txtContactFullname;
     private ImageView   _imgAvatar;
@@ -26,14 +26,10 @@ public class PreviewViewHolder extends RecyclerView.ViewHolder implements View.O
         _imgAvatar = (ImageView) itemView.findViewById(R.id.imgAvatar);
         _btnSms = (ImageButton) itemView.findViewById(R.id.btnSms);
         _btnCall = (ImageButton) itemView.findViewById(R.id.btnCall);
-
-
-
     }
 
     public void bind(Contact contact){
         _contact = contact;
-    //    Log.i("DATA", contact.getFirstname() + " " + contact.getName().toUpperCase());
         _txtContactFullname.setText(contact.getFirstname() + " " + contact.getName().toUpperCase());
 
 
@@ -51,7 +47,6 @@ public class PreviewViewHolder extends RecyclerView.ViewHolder implements View.O
 
     public void onClick(View view){
         Intent intent = new Intent (itemView.getContext(), ContactDetail.class);
-        Log.i("CLICK", "item " + _contact.getName() + " cliqué");
         intent.putExtra("Contact", _contact);
         itemView.getContext().startActivity(intent);
 
