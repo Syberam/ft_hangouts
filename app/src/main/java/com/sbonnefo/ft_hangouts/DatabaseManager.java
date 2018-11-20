@@ -87,9 +87,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     public long updateContact( Contact contact ){
         int             id = contact.getId();
-
-        Log.i("DATABASE_ID", Integer.toString(id));
-
         String          name = contact.getName().replace("'","''");
         String          first_name = contact.getFirstname().replace("'", "''");
         String          phone_num = contact.getPhone().replace("'", "''");
@@ -115,10 +112,15 @@ public class DatabaseManager extends SQLiteOpenHelper {
         values.put("notes", notes);
         values.put("birth", birth);
 
-        long ret = this.getWritableDatabase().update("T_contacts", values, where, whereArgs);
-        Log.i("DATABASE RET", Long.toString(ret));
-        return (ret);
+        return (this.getWritableDatabase().update("T_contacts", values, where, whereArgs));
+    }
 
+    public long deleteContact( Contact contact){
+        int         id = contact.getId();
+        String      where = "idContact=?";
+        String[]    whereArgs = {Integer.toString(id)};
+
+        return (this.getWritableDatabase().delete("T_contacts", where, whereArgs));
     }
 
     public void insertMessage( Message message ){

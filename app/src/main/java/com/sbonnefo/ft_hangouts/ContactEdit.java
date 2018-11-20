@@ -15,6 +15,7 @@ import java.util.Date;
 
 public class ContactEdit extends AppCompatActivity {
 
+    private final static int    EDIT_CODE = 1;
     private Contact     _contact;
     private ImageButton _btnSave;
     private EditText    _firstname, _lastname, _phone, _email, _address, _birth, _notes;
@@ -102,7 +103,7 @@ public class ContactEdit extends AppCompatActivity {
                 Intent  intent = new Intent(ContactEdit.this, ContactDetail.class);
                 intent.putExtra("ContactBis", _contact);
                 Log.i("IN EDIT", _contact.getName());
-                setResult(1, intent);
+                setResult(EDIT_CODE, intent);
                 finish();
             }
         }

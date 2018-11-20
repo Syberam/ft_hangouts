@@ -8,13 +8,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ContactDetail extends AppCompatActivity {
 
     private final static int    EDIT_CODE = 1;
     private Contact     _contact;
     private TextView    _fullname, _phone, _email, _address, _birthday, _notes;
-    private ImageButton _btnEdit, _btnSms, _btnCall;
+    private ImageButton _btnEdit, _btnDelete, _btnSms, _btnCall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,9 @@ public class ContactDetail extends AppCompatActivity {
         _address = findViewById(R.id.lblAddress);
         _notes = findViewById(R.id.lblNotes);
         _btnEdit = findViewById(R.id.btnEdit);
+        _btnDelete = findViewById(R.id.btnDelete);
         activateBtnEdit();
+        activateBtnDelete();
         setInfos();
 
     }
@@ -62,6 +65,27 @@ public class ContactDetail extends AppCompatActivity {
                 Intent  intent = new Intent(ContactDetail.this, ContactEdit.class);
                 intent.putExtra("Contact", _contact);
                 startActivityForResult(intent, EDIT_CODE);
+            }
+        });
+    }
+
+    protected void activateBtnDelete(){
+        _btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseManager databaseManager = new DatabaseManager(ContactDetail.this);
+                databaseManager.deleteContact(_contact);
+                databaseManager.close();
+                Toast.makeText(ContactDetail.this,
+                        getString(R.string.contact_delete,
+                                _contact.getFirstname() + " " + _contact.getName()),
+                        Toast.LENGTH_LONG).show();
+                try {
+                    wait(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                finish();
             }
         });
     }

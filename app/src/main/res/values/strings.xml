@@ -23,4 +23,5 @@
     <string name="toast_contact_save">New contact saved : %s</string>
     <string name="toast_contact_save_error">Error: contact not saved</string>
     <string name="toast_contact_update">Contact update : %s</string>
+    <string name="contact_delete">Contact %s has been deleted</string>
 </resources>
