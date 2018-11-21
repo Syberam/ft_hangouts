@@ -12,7 +12,14 @@ public class Contact implements Serializable {
     private Date _birth;
 
 
+    Contact(){
+        _id = -1;
+        _avatar = null;
+        _birth = null;
+    }
+
     Contact(String name, String firstname, String phone, String email, String address){
+        _id = -1;
         _name = name;
         _firstname = firstname;
         _email = email;
@@ -50,6 +57,7 @@ public class Contact implements Serializable {
 
 
     Contact(String name, String firstname, String phone, String email, String address, String notes){
+        _id = -1;
         _name = name;
         _firstname = firstname;
         _email = email;
@@ -72,6 +80,7 @@ public class Contact implements Serializable {
 
     Contact(String name, String firstname, String phone, String email, String address, String notes,
             Date birth){
+        _id = -1;
         _name = name;
         _firstname = firstname;
         _email = email;

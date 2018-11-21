@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -57,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         if (_toastDate) {
             for (int i = 0; i < 3; i++) {
-                Toast.makeText(this, _pauseDate.toString(), Toast.LENGTH_LONG).show();
+                DateFormat dateFormat = DateFormat.getDateTimeInstance();
+                String toastDate = dateFormat.format(_pauseDate);
+                Toast.makeText(this, toastDate, Toast.LENGTH_LONG).show();
             }
         }
         refreshList();

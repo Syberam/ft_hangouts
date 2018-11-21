@@ -2,6 +2,7 @@ package com.sbonnefo.ft_hangouts;
 
 import android.content.Intent;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class ContactDetail extends AppCompatActivity {
 
@@ -45,8 +50,10 @@ public class ContactDetail extends AppCompatActivity {
         else
             _email.setText(_contact.getEmail());
 
-        if (_contact.getBirth() != null)
-            _birthday.setText(_contact.getBirth().toString());
+        if (_contact.getBirth() != null) {
+            DateFormat dateFormat = DateFormat.getDateInstance();
+            _birthday.setText(dateFormat.format(_contact.getBirth()));
+        }
         else
             _birthday.setText(getString(R.string.NA));
 
@@ -98,5 +105,12 @@ public class ContactDetail extends AppCompatActivity {
             Log.i("RESULT CHANGED", _contact.getName());
         }
         setInfos();
+    }
+
+    private AlertDialog deleteContact(){
+        AlertDialog deleteContactConfirmationBox = new AlertDialog.Builder(this)
+                .setTitle("Delete contact")
+                .setMessage("Are you sure to Delete " + _contact.getFirstname() + + _contact.getName().toUpperCase())
+                .setPositiveButton()
     }
 }

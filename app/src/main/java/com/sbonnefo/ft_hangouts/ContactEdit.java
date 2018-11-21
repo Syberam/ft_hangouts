@@ -78,6 +78,8 @@ public class ContactEdit extends AppCompatActivity {
                         getString(R.string.toast_empty_field), Toast.LENGTH_LONG).show();
             }
             else {
+                if (_contact == null)
+                    _contact = new Contact();
                 _contact.setName(lastname);
                 _contact.setFirtname(firstname);
                 _contact.setPhone(phone);
@@ -85,8 +87,9 @@ public class ContactEdit extends AppCompatActivity {
                 _contact.setAddress(address);
                 _contact.setNotes(notes);
                 _contact.setBirth(birth);
+
                 DatabaseManager databaseManager = new DatabaseManager(ContactEdit.this);
-                if (databaseManager.updateContact(_contact) != -1) {
+                if (_contact.getId() != -1 && databaseManager.updateContact(_contact) != -1) {
                     Toast.makeText(ContactEdit.this,
                             getString(R.string.toast_contact_update, firstname + " " + lastname)
                             , Toast.LENGTH_LONG).show();
@@ -102,7 +105,6 @@ public class ContactEdit extends AppCompatActivity {
                 databaseManager.close();
                 Intent  intent = new Intent(ContactEdit.this, ContactDetail.class);
                 intent.putExtra("ContactBis", _contact);
-                Log.i("IN EDIT", _contact.getName());
                 setResult(EDIT_CODE, intent);
                 finish();
             }

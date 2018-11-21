@@ -44,7 +44,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
 
         db.execSQL( strSql );
-        Log.i("DATABASE", "database created");
     }
 
     @Override
@@ -141,7 +140,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
         List<Contact> contacts = new ArrayList<>();
         Cursor cursor = this.getReadableDatabase().query( "T_contacts",
                 new String[] { "idContact", "name", "first_name", "phone_num", "email", "address", "notes", "birth"},
-                null, null, null, null, "name asc");
+                null, null, null, null, "name asc, first_name asc");
         cursor.moveToFirst();
         while (! cursor.isAfterLast()){
             String      birth = cursor.getString(7);
@@ -158,8 +157,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
                     e.printStackTrace();
                 }
             }
-            Log.i("Contact id", Integer.toString(cursor.getInt(0)));
-            Log.i("_____", "_____");
             Contact contact = new Contact(  cursor.getInt(0),
                                     cursor.getString(1),
                                     cursor.getString(2),
