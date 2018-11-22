@@ -1,5 +1,6 @@
 package com.sbonnefo.ft_hangouts;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -12,8 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
 
 public class ContactDetail extends AppCompatActivity {
 
@@ -80,19 +79,30 @@ public class ContactDetail extends AppCompatActivity {
         _btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseManager databaseManager = new DatabaseManager(ContactDetail.this);
-                databaseManager.deleteContact(_contact);
-                databaseManager.close();
-                Toast.makeText(ContactDetail.this,
-                        getString(R.string.contact_delete,
-                                _contact.getFirstname() + " " + _contact.getName()),
-                        Toast.LENGTH_LONG).show();
-                try {
-                    wait(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                finish();
+                AlertDialog.Builder deleteContactAlert = new AlertDialog.Builder(ContactDetail.this);
+
+                deleteContactAlert.setTitle(R.string.DeleteContactTitle);
+                deleteContactAlert.setMessage(getString(R.string.WarningDeleteContact,
+                        _contact.getFirstname() + " " + _contact.getName().toUpperCase()));
+                deleteContactAlert.setPositiveButton(R.string.DeleteBtn, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DatabaseManager databaseManager = new DatabaseManager(ContactDetail.this);
+                        databaseManager.deleteContact(_contact);
+                        databaseManager.close();
+                        Toast.makeText(ContactDetail.this,
+                                getString(R.string.contact_delete,
+                                        _contact.getFirstname() + " " + _contact.getName()),
+                                Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                });
+                deleteContactAlert.setNegativeButton(R.string.CancelBtn, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {}
+                });
+                AlertDialog shouldDelete = deleteContactAlert.create();
+                shouldDelete.show();
             }
         });
     }
@@ -105,12 +115,5 @@ public class ContactDetail extends AppCompatActivity {
             Log.i("RESULT CHANGED", _contact.getName());
         }
         setInfos();
-    }
-
-    private AlertDialog deleteContact(){
-        AlertDialog deleteContactConfirmationBox = new AlertDialog.Builder(this)
-                .setTitle("Delete contact")
-                .setMessage("Are you sure to Delete " + _contact.getFirstname() + + _contact.getName().toUpperCase())
-                .setPositiveButton()
     }
 }

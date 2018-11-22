@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ContactEdit" />
-        <activity android:name=".ContactDetail"></activity>
+        <activity android:name=".ContactDetail" />
+        <activity android:name=".MessageView"></activity>
     </application>
 
 </manifest>

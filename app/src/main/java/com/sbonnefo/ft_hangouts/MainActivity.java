@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton     btnGoContact;
     private DatabaseManager _databaseManager;
     private Date            _pauseDate;
-    private boolean         _toastDate;
+    private boolean         _toastDate = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,35 +35,58 @@ public class MainActivity extends AppCompatActivity {
         btnGoContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                unsetToastDate();
                 Intent intent = new Intent(MainActivity.this, ContactEdit.class );
                 //Intent.putExtra( "Contact", contact );
                 startActivity(intent);
+
             }
         });
-
         refreshList();
-
-        _toastDate = false;
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        _pauseDate = Calendar.getInstance().getTime();
-        _toastDate = true;
+        setToastDate();
+        Log.i("PAUSE", "We are on PAUSE");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        setToastDate();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (_toastDate) {
-            for (int i = 0; i < 3; i++) {
-                DateFormat dateFormat = DateFormat.getDateTimeInstance();
-                String toastDate = dateFormat.format(_pauseDate);
-                Toast.makeText(this, toastDate, Toast.LENGTH_LONG).show();
-            }
-        }
+        Log.i("RESUME", "We are on RESUME");
         refreshList();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("STOP", "We are on STOP");
+        _pauseDate = Calendar.getInstance().getTime();
+        _toastDate = true;
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("RESTART", "We are on RESTART");
+        putDateToast();
+        refreshList();
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        putDateToast();
+        Log.i("START", "We are on START");
     }
 
     @Override
@@ -88,11 +111,30 @@ public class MainActivity extends AppCompatActivity {
 
         List<Contact> contacts = _databaseManager.getContacts();
 
-
         recyclerViewContacts = (RecyclerView) findViewById(R.id.recyclerContacts);
         recyclerViewContacts.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewContacts.setAdapter(new ContactsPreviewAdapter(contacts));
 
         _databaseManager.close();
+    }
+
+    public void setToastDate() {
+        _toastDate = true;
+    }
+
+    public void unsetToastDate(){
+        _toastDate = false;
+    }
+
+
+    private void putDateToast(){
+        if (_toastDate && _pauseDate != null) {
+            for (int i = 0; i < 3; i++) {
+                DateFormat dateFormat = DateFormat.getDateTimeInstance();
+                String toastDate = dateFormat.format(_pauseDate);
+                Toast.makeText(this, toastDate, Toast.LENGTH_LONG).show();
+                _toastDate = false;
+            }
+        }
     }
 }
