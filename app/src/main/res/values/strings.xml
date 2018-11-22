@@ -28,4 +28,5 @@
     <string name="DeleteBtn">Delete</string>
     <string name="CancelBtn">Cancel</string>
     <string name="DeleteContactTitle">Delete Contact definitively</string>
+    <string name="send_the_message">Send the message</string>
 </resources>

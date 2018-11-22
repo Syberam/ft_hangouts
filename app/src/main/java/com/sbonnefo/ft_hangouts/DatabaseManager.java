@@ -26,7 +26,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String strSql = "Create Table T_contacts ("
+        String strSql_createContacts = "Create Table T_contacts ("
                         + "     idContact integer primary key autoincrement,"
                         + "     name text not null,"
                         + "     first_name text not null,"
@@ -34,16 +34,18 @@ public class DatabaseManager extends SQLiteOpenHelper {
                         + "     email text not null,"
                         + "     address text not null,"
                         + "     birth text not null,"
-                        + "     notes text);"
+                        + "     notes text)";
 
-                        + "Create Table T_messages ("
+        String strSql_createMessages = "Create Table T_messages ("
                         + "     idMessage integer primary key autoincrement,"
-                        + "     contact integer,"
-                        + "     date integer not null,"
+                        + "     contact integer not null,"
+                        + "     io integer not null,"
+                        + "     date test not null,"
                         + "     content test not null)";
 
 
-        db.execSQL( strSql );
+        db.execSQL( strSql_createContacts );
+        db.execSQL( strSql_createMessages );
     }
 
     @Override
@@ -126,10 +128,12 @@ public class DatabaseManager extends SQLiteOpenHelper {
         int contact = message.getContact().getId();
         String content = message.getMessage();
         Date date = message.getDate();
+        Boolean in = message.isIn();
 
         String strSql = "insert into T_messages (contact, date, content) "
                         + " values ("
                         + contact + ", "
+                        + in + ", "
                         + date.getTime() + ", '"
                         + content + "')";
 
@@ -173,6 +177,33 @@ public class DatabaseManager extends SQLiteOpenHelper {
         }
         cursor.close();
         return contacts;
+    }
+
+    public List<Message> getMessages(Contact contact){
+        List<Message> messages = new ArrayList<>();
+
+        Cursor cursor = this.getReadableDatabase().query("T_messages",
+                new String[] { "idMessage", "io", "date", "content"},
+                "contact = ?", new String[] {Integer.toString(contact.getId())},
+                null, null, "date");
+        cursor.moveToFirst();
+
+        while (! cursor.isAfterLast()){
+            String      messageDate = cursor.getString(2);
+            DateFormat  dateFormat = new SimpleDateFormat("MM d, yyyy", Locale.ENGLISH);
+            Date        date = null;
+            try {
+                date = dateFormat.parse(messageDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            boolean io = cursor.getInt(1) == 1;
+            Message message = new Message(io, contact, cursor.getString(3), date);
+
+            messages.add( message );
+            cursor.moveToNext();
+        }
+        return messages;
     }
 
 

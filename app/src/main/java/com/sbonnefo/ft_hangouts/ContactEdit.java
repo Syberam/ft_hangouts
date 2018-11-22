@@ -3,14 +3,13 @@ package com.sbonnefo.ft_hangouts;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.text.ParseException;
 import java.util.Date;
 
 public class ContactEdit extends AppCompatActivity {
@@ -48,7 +47,7 @@ public class ContactEdit extends AppCompatActivity {
             _address.setText(_contact.getAddress());
 
             if (_contact.getBirth() != null){
-                dateFormat = DateFormat.getDateInstance();
+                dateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
                 _birth.setText(dateFormat.format(_contact.getBirth()));
             }
             _notes.setText(_contact.getNotes());
@@ -66,12 +65,17 @@ public class ContactEdit extends AppCompatActivity {
             String  email = _email.getText().toString();
             String  address = _address.getText().toString();
             String  notes = _notes.getText().toString();
-            Date    birth;
+            Date    birth = null;
 
-            if (_birth.getText().toString().isEmpty())
-                birth = null;
-            else
-                birth = new Date(_birth.getText().toString());
+            if (!_birth.getText().toString().isEmpty())
+            {
+                DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
+                try {
+                    birth = dateFormat.parse(_birth.getText().toString());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
 
             if (lastname.isEmpty() || firstname.isEmpty() || phone.isEmpty()){
                 Toast.makeText(ContactEdit.this,

@@ -28,6 +28,7 @@ public class Message {
 
     public Contact getContact(){ return _contact ; }
     public String getMessage(){ return _message; }
-    public Date getDate(){ return _date ;}
+    public Date getDate(){ return _date;}
+    public Boolean isIn(){ return _io; }
 }
 

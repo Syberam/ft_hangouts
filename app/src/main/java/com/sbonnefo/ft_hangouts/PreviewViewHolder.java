@@ -32,13 +32,21 @@ public class PreviewViewHolder extends RecyclerView.ViewHolder implements View.O
         _contact = contact;
         _txtContactFullname.setText(contact.getFirstname() + " " + contact.getName().toUpperCase());
 
-
         if (contact.getAvatar() != null){
             Log.i("HOLDER", "No image");
         }
         else {
             _imgAvatar.setImageResource(R.drawable.default_avatar);
         }
+
+        _btnSms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(itemView.getContext(), MessageView.class);
+                intent.putExtra("Contact", _contact);
+                itemView.getContext().startActivity(intent);
+            }
+        });
         // TODO btns events
 
     }

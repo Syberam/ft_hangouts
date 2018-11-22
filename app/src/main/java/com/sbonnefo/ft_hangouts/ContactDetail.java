@@ -34,8 +34,10 @@ public class ContactDetail extends AppCompatActivity {
         _notes = findViewById(R.id.lblNotes);
         _btnEdit = findViewById(R.id.btnEdit);
         _btnDelete = findViewById(R.id.btnDelete);
+        _btnSms = findViewById(R.id.btnSms);
         activateBtnEdit();
         activateBtnDelete();
+        activateBtnSms();
         setInfos();
 
     }
@@ -115,5 +117,16 @@ public class ContactDetail extends AppCompatActivity {
             Log.i("RESULT CHANGED", _contact.getName());
         }
         setInfos();
+    }
+
+    private void activateBtnSms(){
+        _btnSms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ContactDetail.this, MessageView.class);
+                intent.putExtra("Contact", _contact);
+                startActivity(intent);
+            }
+        });
     }
 }
