@@ -40,8 +40,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
                         + "     idMessage integer primary key autoincrement,"
                         + "     contact integer not null,"
                         + "     io integer not null,"
-                        + "     date test not null,"
-                        + "     content test not null)";
+                        + "     date text not null,"
+                        + "     content text not null)";
 
 
         db.execSQL( strSql_createContacts );
@@ -127,14 +127,15 @@ public class DatabaseManager extends SQLiteOpenHelper {
     public void insertMessage( Message message ){
         int contact = message.getContact().getId();
         String content = message.getMessage();
-        Date date = message.getDate();
-        Boolean in = message.isIn();
+        DateFormat dateFormat = new SimpleDateFormat("MM d, yyyy", Locale.ENGLISH);
+        String date = dateFormat.format(message.getDate());
+        Integer io = message.isIn() ? 1 : 0;
 
-        String strSql = "insert into T_messages (contact, date, content) "
+        String strSql = "insert into T_messages (contact, io, date, content) "
                         + " values ("
                         + contact + ", "
-                        + in + ", "
-                        + date.getTime() + ", '"
+                        + io + ", '"
+                        + date + "', '"
                         + content + "')";
 
         this.getWritableDatabase().execSQL( strSql );

@@ -1,5 +1,6 @@
 package com.sbonnefo.ft_hangouts;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class Message {
@@ -12,7 +13,7 @@ public class Message {
         _io = io;
         _contact = contact;
         _message = message;
-        _date = new Date();
+        _date = Calendar.getInstance().getTime();
     }
 
     Message(boolean io, Contact contact, String message, Date date) {
