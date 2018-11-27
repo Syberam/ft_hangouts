@@ -1,11 +1,15 @@
 package com.sbonnefo.ft_hangouts;
 
+import android.content.Context;
+import android.inputmethodservice.Keyboard;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -30,24 +34,49 @@ public class MessageView extends AppCompatActivity {
         _btnSend = findViewById(R.id.btnSend);
         _sms = findViewById(R.id.editTxtMessage);
 
-        _databaseManager = new DatabaseManager(this);
+        setTitle(_contact.getFirstname() + " " + _contact.getName().toUpperCase());
 
+        /* to reverse the scroll direction */
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setReverseLayout(false);
+        layoutManager.setStackFromEnd(true);
+        // Set the layout manager to your recyclerview
+        _recyclerViewMessages.setLayoutManager(layoutManager);
+        /* _______________________________ */
 
-        List<Message> messages = _databaseManager.getMessages(_contact);
-
-        _recyclerViewMessages.setLayoutManager(new LinearLayoutManager(this));
-        _recyclerViewMessages.setAdapter(new MessageAdapter(messages));
-
+        setMessages();
         _btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String  smsContent = _sms.getText().toString();
-                Message sms = new Message(false, _contact, smsContent);
-                DatabaseManager databaseManager = MessageView.this.getDatabaseManager();
-                // TODO send message
-                databaseManager.insertMessage(sms);
+                String  smsContent = _sms.getText().toString().trim();
+                if (!smsContent.isEmpty()) {
+                    Message sms = new Message(false, _contact, smsContent);
+                    DatabaseManager databaseManager = MessageView.this.getDatabaseManager();
+                    databaseManager.insertMessage(sms);
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(_contact.getPhone(), null, smsContent, null, null);
+                    setMessages();
+                    _recyclerViewMessages.removeAllViews();
+                    _recyclerViewMessages.refreshDrawableState();
+                    _sms.setText("");
+                }
+                else {
+                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
             }
         });
+    }
+
+    protected void setMessages(){
+
+
+        _databaseManager = new DatabaseManager(this);
+        List<Message> messages = _databaseManager.getMessages(_contact);
+
+
+        _recyclerViewMessages.setAdapter(new MessageAdapter(messages));
+
     }
 
     @Override

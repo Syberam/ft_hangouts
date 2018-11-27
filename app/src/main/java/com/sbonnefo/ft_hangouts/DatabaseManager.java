@@ -127,9 +127,10 @@ public class DatabaseManager extends SQLiteOpenHelper {
     public void insertMessage( Message message ){
         int contact = message.getContact().getId();
         String content = message.getMessage();
-        DateFormat dateFormat = new SimpleDateFormat("MM d, yyyy", Locale.ENGLISH);
+        DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,
+                                                DateFormat.SHORT, Locale.ENGLISH);
         String date = dateFormat.format(message.getDate());
-        Integer io = message.isIn() ? 1 : 0;
+        Integer io = message.isIn() ? 0 : 1;
 
         String strSql = "insert into T_messages (contact, io, date, content) "
                         + " values ("
@@ -191,7 +192,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
         while (! cursor.isAfterLast()){
             String      messageDate = cursor.getString(2);
-            DateFormat  dateFormat = new SimpleDateFormat("MM d, yyyy", Locale.ENGLISH);
+            DateFormat  dateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,
+                                                                DateFormat.SHORT, Locale.ENGLISH);
             Date        date = null;
             try {
                 date = dateFormat.parse(messageDate);
