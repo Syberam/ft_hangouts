@@ -1,19 +1,15 @@
 package com.sbonnefo.ft_hangouts;
 
 import android.content.Context;
-import android.inputmethodservice.Keyboard;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import java.util.Date;
 import java.util.List;
 
 public class MessageView extends AppCompatActivity {
@@ -27,6 +23,8 @@ public class MessageView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        setTheme(MainActivity.getCurrentTheme());
         setContentView(R.layout.activity_message_view);
 
         _contact = (Contact) getIntent().getSerializableExtra("Contact");
@@ -53,8 +51,8 @@ public class MessageView extends AppCompatActivity {
                     Message sms = new Message(false, _contact, smsContent);
                     DatabaseManager databaseManager = MessageView.this.getDatabaseManager();
                     databaseManager.insertMessage(sms);
-                    SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage(_contact.getPhone(), null, smsContent, null, null);
+                    // SmsManager smsManager = SmsManager.getDefault();
+                    // smsManager.sendTextMessage(_contact.getPhone(), null, smsContent, null, null);
                     setMessages();
                     _recyclerViewMessages.removeAllViews();
                     _recyclerViewMessages.refreshDrawableState();
@@ -87,4 +85,5 @@ public class MessageView extends AppCompatActivity {
     }
 
     public DatabaseManager getDatabaseManager(){ return _databaseManager; }
+
 }

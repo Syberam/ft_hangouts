@@ -3,4 +3,14 @@
     <color name="colorPrimary">#d9fbe9</color>
     <color name="colorPrimaryDark">#00574b</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorAndroid">#b8deca</color>
+    <color name="colorAndroidDark">#00574b</color>
+    <color name="colorAlliance">#2eb368</color>
+    <color name="colorAllianceDark">#0e4e2a</color>
+    <color name="colorFederation">#3365c8</color>
+    <color name="colorFederationDark">#0e2d69</color>
+    <color name="colorOrder">#ef503f</color>
+    <color name="colorOrderDark">#63160e</color>
+    <color name="colorAssembly">#8845bc</color>
+    <color name="colorAssemblyDark">#421664</color>
 </resources>

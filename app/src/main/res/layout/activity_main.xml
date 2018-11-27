@@ -34,6 +34,7 @@
         android:contentDescription="@string/add_contact"
         android:scaleType="fitCenter"
         android:text=""
+        android:elevation="4dp"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
 

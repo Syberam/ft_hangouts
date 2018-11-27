@@ -1,6 +1,9 @@
 package com.sbonnefo.ft_hangouts;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +15,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -25,11 +29,16 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseManager _databaseManager;
     private Date            _pauseDate;
     private boolean         _toastDate = false;
+    static int             _currentTheme = R.style.AppThemeAlliance;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setTheme(MainActivity.getCurrentTheme());
         setContentView( R.layout.activity_main );
+
 
         btnGoContact = (ImageButton) findViewById( R.id.btnContact);
         btnGoContact.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         setToastDate();
-        Log.i("PAUSE", "We are on PAUSE");
     }
 
     @Override
@@ -61,14 +69,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i("RESUME", "We are on RESUME");
         refreshList();
+
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.i("STOP", "We are on STOP");
         _pauseDate = Calendar.getInstance().getTime();
         _toastDate = true;
     }
@@ -76,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.i("RESTART", "We are on RESTART");
+
         putDateToast();
         refreshList();
     }
@@ -86,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         putDateToast();
-        Log.i("START", "We are on START");
     }
 
     @Override
@@ -99,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch ( item.getItemId()){
             case R.id.menu_options:
-                Toast.makeText( this, "Go to options", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, SettingsColorsActivity.class);
+                startActivity( intent );
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -111,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
         List<Contact> contacts = _databaseManager.getContacts();
 
-        recyclerViewContacts = (RecyclerView) findViewById(R.id.recyclerContacts);
+        recyclerViewContacts = findViewById(R.id.recyclerContacts);
         recyclerViewContacts.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewContacts.setAdapter(new ContactsPreviewAdapter(contacts));
 
@@ -121,6 +128,10 @@ public class MainActivity extends AppCompatActivity {
     public void setToastDate() {
         _toastDate = true;
     }
+    static void setCurrentTheme(Integer theme) { _currentTheme = theme; }
+
+
+    static Integer getCurrentTheme() {return _currentTheme; }
 
     public void unsetToastDate(){
         _toastDate = false;

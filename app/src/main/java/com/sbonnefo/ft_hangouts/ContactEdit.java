@@ -25,7 +25,10 @@ public class ContactEdit extends AppCompatActivity {
         DateFormat dateFormat;
 
         super.onCreate(savedInstanceState);
+
+        setTheme(MainActivity.getCurrentTheme());
         setContentView(R.layout.activity_contact_card);
+
         _contact = (Contact) getIntent().getSerializableExtra("Contact");
         _btnSave = (ImageButton) findViewById(R.id.btnSave);
         _btnSave.setOnClickListener(btnSaveListener);

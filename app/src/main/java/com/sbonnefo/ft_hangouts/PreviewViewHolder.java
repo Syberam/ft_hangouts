@@ -47,8 +47,6 @@ public class PreviewViewHolder extends RecyclerView.ViewHolder implements View.O
                 itemView.getContext().startActivity(intent);
             }
         });
-        // TODO btns events
-
     }
 
     public Contact  getContact(){ return _contact; }

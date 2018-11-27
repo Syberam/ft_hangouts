@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundGravity="center_vertical|center_horizontal"
+    tools:context=".SettingsColorsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtOptionInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/customAppInfo"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <RadioGroup
+                android:id="@+id/grpRadioColors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtOptionInfo"
+                tools:layout_editor_absoluteX="0dp">
+
+                <RadioButton
+                    android:id="@+id/radioBtnAndroid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorAndroid"
+                    android:buttonTint="@color/colorAndroidDark"
+                    android:elevation="2dp"
+                    android:shadowColor="@color/colorPrimaryDark"
+                    android:text="Android" />
+
+                <RadioButton
+                    android:id="@+id/radioBtnAlliance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorAlliance"
+                    android:buttonTint="@color/colorAllianceDark"
+                    android:elevation="2dp"
+                    android:shadowColor="@color/colorAllianceDark"
+                    android:text="Alliance" />
+
+                <RadioButton
+                    android:id="@+id/radioBtnAssembly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorAssembly"
+                    android:buttonTint="@color/colorAssemblyDark"
+                    android:elevation="2dp"
+                    android:shadowColor="@color/colorAssemblyDark"
+                    android:text="Assembly" />
+
+                <RadioButton
+                    android:id="@+id/radioBtnFederation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorFederation"
+                    android:buttonTint="@color/colorFederationDark"
+                    android:elevation="2dp"
+                    android:shadowColor="@color/colorFederationDark"
+                    android:text="Federation" />
+
+                <RadioButton
+                    android:id="@+id/radioBtnOrder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorOrder"
+                    android:buttonTint="@color/colorOrderDark"
+                    android:elevation="2dp"
+                    android:shadowColor="@color/colorOrderDark"
+                    android:text="Order" />
+
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

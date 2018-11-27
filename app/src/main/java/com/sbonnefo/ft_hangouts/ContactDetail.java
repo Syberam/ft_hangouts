@@ -24,7 +24,10 @@ public class ContactDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setTheme(MainActivity.getCurrentTheme());
         setContentView(R.layout.activity_contact_detail);
+
         _contact = (Contact) getIntent().getSerializableExtra("Contact");
         _fullname = findViewById(R.id.lblFullname);
         _phone = findViewById(R.id.lblPhone);
