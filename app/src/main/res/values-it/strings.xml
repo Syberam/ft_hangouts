@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ft_hangouts</string>
+
+    <string name="hello_blank_fragment">Ciao frammento vergine</string>
+    <string name="firstname">conome</string>
+    <string name="lastname">Nome della famiglia</string>
+    <string name="phone">Numero di telefono</string>
+    <string name="email">Indirizzo elettronico</string>
+    <string name="address">Indirizzo postale</string>
+    <string name="notes">Osservazioni</string>
+    <string name="birth">Compleanno</string>
+    <string name="add_contact">Aggiungi un nuovo contatto</string>
+    <string name="send_sms">Invia un SMS</string>
+    <string name="edit_contact">Modifica contatto</string>
+    <string name="make_call">chiamata</string>
+    <string name="img_avatar">Foto di contatto</string>
+    <string name="delete_contact">Elimina contatto</string>
+    <string name="toast_empty_field">Cognome, nome o numero di telefono vuoto</string>
+
+    <string name="NA">NR</string>
+
+    <string name="toast_contact_save">Nuovo contatto salvato:% s</string>
+    <string name="toast_contact_save_error">Errore: contatto non salvato</string>
+    <string name="toast_contact_update">Aggiornamento contatti:% s</string>
+    <string name="contact_delete">Il contatto% s è stato rimosso</string>
+    <string name="WarningDeleteContact">Tutte le informazioni su% s saranno cancellate!</string>
+    <string name="DeleteBtn">cancellare</string>
+    <string name="CancelBtn">annullare</string>
+    <string name="DeleteContactTitle">Elimina definitivamente il contatto</string>
+    <string name="send_the_message">Invia il messaggio</string>
+    <string name="title_activity_settings">impostazioni</string>
+
+
+    <string name="customApp">Personalizza i tuoi ft_hangouts</string>
+    <string name="customAppInfo">Scegli un disegno a colori</string>
+    <string name="settings">opzioni</string>
+    <string name="save_button">Salva il pulsante</string>
+
+</resources>

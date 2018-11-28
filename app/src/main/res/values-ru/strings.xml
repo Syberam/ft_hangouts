@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ft_hangouts</string>
+
+    <string name="hello_blank_fragment">Привет, девственный фрагмент</string>
+    <string name="firstname">имя</string>
+    <string name="lastname">Фамилия</string>
+    <string name="phone">Номер телефона</string>
+    <string name="email">Электронный адрес</string>
+    <string name="address">Почтовый адрес</string>
+    <string name="notes">замечания</string>
+    <string name="birth">день рождения</string>
+    <string name="add_contact">Добавить новый контакт</string>
+    <string name="send_sms">Отправить SMS</string>
+    <string name="edit_contact">Изменить контакт</string>
+    <string name="make_call">вызов</string>
+    <string name="img_avatar">Контактная фотография</string>
+    <string name="delete_contact">Удалить контакт</string>
+    <string name="toast_empty_field">Фамилия, имя или номер телефона</string>
+
+    <string name="NA">NR</string>
+
+    <string name="toast_contact_save">Новый контакт сохранен:% s</string>
+    <string name="toast_contact_save_error">Ошибка: несохраненный контакт</string>
+    <string name="toast_contact_update">Обновление контактов:% s</string>
+    <string name="contact_delete">Контакт% s удален</string>
+    <string name="WarningDeleteContact">Вся информация о% s будет удалена!</string>
+    <string name="DeleteBtn">вычеркивать</string>
+    <string name="CancelBtn">отменить</string>
+    <string name="DeleteContactTitle">Навсегда удалить контакт</string>
+    <string name="send_the_message">Отправить сообщение</string>
+    <string name="title_activity_settings">настройки</string>
+
+
+    <string name="customApp">Настройте ft_hangouts</string>
+    <string name="customAppInfo">Выберите цветной дизайн</string>
+    <string name="settings">опции</string>
+    <string name="save_button">Кнопка «Сохранить»</string>
+
+</resources>

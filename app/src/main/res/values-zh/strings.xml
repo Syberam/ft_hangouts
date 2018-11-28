@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ft_hangouts</string>
+
+    <string name="hello_blank_fragment">你好空白片段</string>
+    <string name="firstname">名字</string>
+    <string name="lastname">姓</string>
+    <string name="phone">电话号码</string>
+    <string name="email">电子邮件地址</string>
+    <string name="address">地址</string>
+    <string name="notes">笔记</string>
+    <string name="birth">生日</string>
+    <string name="add_contact">添加新联系人</string>
+    <string name="send_sms">发送短信</string>
+    <string name="edit_contact">更改联系资料</string>
+    <string name="make_call">呼叫</string>
+    <string name="img_avatar">联系图片</string>
+    <string name="delete_contact">删除联系人</string>
+    <string name="toast_empty_field">清空名字，姓氏或电话号码</string>
+
+    <string name="NA">NA</string>
+
+    <string name="toast_contact_save">新联系人已保存：％s</string>
+    <string name="toast_contact_save_error">错误：联系人未保存</string>
+    <string name="toast_contact_update">联系人更新：％s</string>
+    <string name="contact_delete">联系人％s已被删除</string>
+    <string name="WarningDeleteContact">关于％s的所有信息都将被删除！</string>
+    <string name="DeleteBtn">删除</string>
+    <string name="CancelBtn">取消</string>
+    <string name="DeleteContactTitle">最终删除联系人</string>
+    <string name="send_the_message">发送消息</string>
+    <string name="title_activity_settings">设置</string>
+
+
+    <string name="customApp">自定义您的ft_hangouts</string>
+    <string name="customAppInfo">选择颜色设计</string>
+    <string name="settings">设置</string>
+    <string name="save_button">保存按钮</string>
+
+</resources>
