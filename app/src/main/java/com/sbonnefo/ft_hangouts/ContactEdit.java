@@ -65,6 +65,7 @@ public class ContactEdit extends AppCompatActivity {
         public void onClick(View v) {
             String  lastname = _lastname.getText().toString();
             String  firstname = _firstname.getText().toString();
+            String[]  contactNames = {firstname, lastname};
             String  phone = null;
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                 phone = PhoneNumberUtils.normalizeNumber(_phone.getText().toString());
@@ -102,12 +103,12 @@ public class ContactEdit extends AppCompatActivity {
                 DatabaseManager databaseManager = new DatabaseManager(ContactEdit.this);
                 if (_contact.getId() != -1 && databaseManager.updateContact(_contact) != -1) {
                     Toast.makeText(ContactEdit.this,
-                            getString(R.string.toast_contact_update, firstname + " " + lastname)
+                            getString(R.string.toast_contact_update, contactNames)
                             , Toast.LENGTH_LONG).show();
                 }
                 else if (databaseManager.insertContact(_contact) != -1) {
                     Toast.makeText(ContactEdit.this,
-                            getString(R.string.toast_contact_save, firstname + " " + lastname)
+                            getString(R.string.toast_contact_save, contactNames)
                             , Toast.LENGTH_LONG).show();
                 }
                 else

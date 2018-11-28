@@ -20,14 +20,14 @@
 
     <string name="NA">NA</string>
 
-    <string name="toast_contact_save">新联系人已保存：％s</string>
+    <string name="toast_contact_save">新联系人已保存：％s %S</string>
     <string name="toast_contact_save_error">错误：联系人未保存</string>
-    <string name="toast_contact_update">联系人更新：％s</string>
-    <string name="contact_delete">联系人％s已被删除</string>
-    <string name="WarningDeleteContact">关于％s的所有信息都将被删除！</string>
-    <string name="DeleteBtn">删除</string>
-    <string name="CancelBtn">取消</string>
-    <string name="DeleteContactTitle">最终删除联系人</string>
+    <string name="toast_contact_update">联系人更新：％s %S</string>
+    <string name="contact_delete">联系人 ％s %S 已被删除</string>
+    <string name="warningDeleteContact">关于 ％s %S 的所有信息都将被删除！</string>
+    <string name="deleteBtn">删除</string>
+    <string name="cancelBtn">取消</string>
+    <string name="deleteContactTitle">最终删除联系人</string>
     <string name="send_the_message">发送消息</string>
     <string name="title_activity_settings">设置</string>
 

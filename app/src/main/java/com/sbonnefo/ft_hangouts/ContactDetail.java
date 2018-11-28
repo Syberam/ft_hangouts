@@ -85,25 +85,24 @@ public class ContactDetail extends AppCompatActivity {
         _btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final String[] contactNames = {_contact.getFirstname(), _contact.getName()};
                 AlertDialog.Builder deleteContactAlert = new AlertDialog.Builder(ContactDetail.this);
 
-                deleteContactAlert.setTitle(R.string.DeleteContactTitle);
-                deleteContactAlert.setMessage(getString(R.string.WarningDeleteContact,
-                        _contact.getFirstname() + " " + _contact.getName().toUpperCase()));
-                deleteContactAlert.setPositiveButton(R.string.DeleteBtn, new DialogInterface.OnClickListener() {
+                deleteContactAlert.setTitle(R.string.deleteContactTitle);
+
+                deleteContactAlert.setMessage(getString(R.string.warningDeleteContact, contactNames)); //getString(R.string.warningDeleteContact, contactFullname));
+                deleteContactAlert.setPositiveButton(R.string.deleteBtn, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         DatabaseManager databaseManager = new DatabaseManager(ContactDetail.this);
                         databaseManager.deleteContact(_contact);
                         databaseManager.close();
                         Toast.makeText(ContactDetail.this,
-                                getString(R.string.contact_delete,
-                                        _contact.getFirstname() + " " + _contact.getName()),
-                                Toast.LENGTH_LONG).show();
+                                getString(R.string.contact_delete, contactNames), Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });
-                deleteContactAlert.setNegativeButton(R.string.CancelBtn, new DialogInterface.OnClickListener() {
+                deleteContactAlert.setNegativeButton(R.string.cancelBtn, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {}
                 });

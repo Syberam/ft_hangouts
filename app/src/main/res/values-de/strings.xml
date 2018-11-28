@@ -21,14 +21,14 @@
 
     <string name="NA">N / A</string>
 
-    <string name="toast_contact_save">Neuer Kontakt gespeichert:% s</string>
+    <string name="toast_contact_save">Neuer Kontakt gespeichert: %s %S</string>
     <string name="toast_contact_save_error">Fehler: Kontakt nicht gespeichert</string>
-    <string name="toast_contact_update">Kontaktaktualisierung:% s</string>
-    <string name="contact_delete">Kontakt% s wurde gelöscht</string>
-    <string name="WarningDeleteContact">Alle Informationen zu% s werden gelöscht!</string>
-    <string name="DeleteBtn">Löschen</string>
-    <string name="CancelBtn">Stornieren</string>
-    <string name="DeleteContactTitle">Kontakt endgültig löschen</string>
+    <string name="toast_contact_update">Kontaktaktualisierung: %s %S</string>
+    <string name="contact_delete">Kontakt %s %S wurde gelöscht</string>
+    <string name="warningDeleteContact">Alle Informationen zu %s %S werden gelöscht!</string>
+    <string name="deleteBtn">Löschen</string>
+    <string name="cancelBtn">Stornieren</string>
+    <string name="deleteContactTitle">Kontakt endgültig löschen</string>
     <string name="send_the_message">Senden Sie die Nachricht</string>
     <string name="title_activity_settings">die Einstellungen</string>
 

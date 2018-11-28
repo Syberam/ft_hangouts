@@ -21,14 +21,14 @@
 
     <string name="NA">NA</string>
 
-    <string name="toast_contact_save">Η νέα επαφή αποθηκεύτηκε:% s</string>
+    <string name="toast_contact_save">Η νέα επαφή αποθηκεύτηκε: %s %S</string>
     <string name="toast_contact_save_error">Σφάλμα: η επαφή δεν αποθηκεύτηκε</string>
-    <string name="toast_contact_update">Επαφές ενημέρωσης:% s</string>
-    <string name="contact_delete">Η επαφή% s έχει διαγραφεί</string>
-    <string name="WarningDeleteContact">Όλες οι πληροφορίες σχετικά με το% s θα διαγραφούν!</string>
-    <string name="DeleteBtn">Διαγράφω</string>
-    <string name="CancelBtn">Ματαίωση</string>
-    <string name="DeleteContactTitle">Διαγραφή οριστικής επαφής</string>
+    <string name="toast_contact_update">Επαφές ενημέρωσης: %s %S</string>
+    <string name="contact_delete">Η επαφή %s %S έχει διαγραφεί</string>
+    <string name="warningDeleteContact">Όλες οι πληροφορίες σχετικά με το %s %S θα διαγραφούν!</string>
+    <string name="deleteBtn">Διαγράφω</string>
+    <string name="cancelBtn">Ματαίωση</string>
+    <string name="deleteContactTitle">Διαγραφή οριστικής επαφής</string>
     <string name="send_the_message">Στείλτε το μήνυμα</string>
     <string name="title_activity_settings">Ρυθμίσεις</string>
 

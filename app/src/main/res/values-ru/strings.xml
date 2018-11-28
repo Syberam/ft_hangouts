@@ -20,17 +20,16 @@
 
     <string name="NA">NR</string>
 
-    <string name="toast_contact_save">Новый контакт сохранен:% s</string>
+    <string name="toast_contact_save">Новый контакт сохранен: %s %S</string>
     <string name="toast_contact_save_error">Ошибка: несохраненный контакт</string>
-    <string name="toast_contact_update">Обновление контактов:% s</string>
-    <string name="contact_delete">Контакт% s удален</string>
-    <string name="WarningDeleteContact">Вся информация о% s будет удалена!</string>
-    <string name="DeleteBtn">вычеркивать</string>
-    <string name="CancelBtn">отменить</string>
-    <string name="DeleteContactTitle">Навсегда удалить контакт</string>
+    <string name="toast_contact_update">Обновление контактов: %s %S</string>
+    <string name="contact_delete">Контакт %s %S удален</string>
+    <string name="warningDeleteContact">Вся информация о %s %S будет удалена!</string>
+    <string name="deleteBtn">вычеркивать</string>
+    <string name="cancelBtn">отменить</string>
+    <string name="deleteContactTitle">Навсегда удалить контакт</string>
     <string name="send_the_message">Отправить сообщение</string>
     <string name="title_activity_settings">настройки</string>
-
 
     <string name="customApp">Настройте ft_hangouts</string>
     <string name="customAppInfo">Выберите цветной дизайн</string>
