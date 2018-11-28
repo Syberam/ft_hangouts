@@ -49,8 +49,8 @@
                     android:layout_weight="1"
                     android:background="@color/colorAndroid"
                     android:buttonTint="@color/colorAndroidDark"
-                    android:elevation="2dp"
                     android:shadowColor="@color/colorPrimaryDark"
+                    android:elevation="2dp"
                     android:text="Android" />
 
                 <RadioButton
@@ -61,8 +61,8 @@
                     android:layout_weight="1"
                     android:background="@color/colorAlliance"
                     android:buttonTint="@color/colorAllianceDark"
-                    android:elevation="2dp"
                     android:shadowColor="@color/colorAllianceDark"
+                    android:elevation="2dp"
                     android:text="Alliance" />
 
                 <RadioButton
@@ -73,8 +73,8 @@
                     android:layout_weight="1"
                     android:background="@color/colorAssembly"
                     android:buttonTint="@color/colorAssemblyDark"
-                    android:elevation="2dp"
                     android:shadowColor="@color/colorAssemblyDark"
+                    android:elevation="2dp"
                     android:text="Assembly" />
 
                 <RadioButton
@@ -85,20 +85,33 @@
                     android:layout_weight="1"
                     android:background="@color/colorFederation"
                     android:buttonTint="@color/colorFederationDark"
-                    android:elevation="2dp"
                     android:shadowColor="@color/colorFederationDark"
+                    android:elevation="2dp"
                     android:text="Federation" />
 
                 <RadioButton
                     android:id="@+id/radioBtnOrder"
                     android:layout_width="match_parent"
+                    android:layout_marginBottom="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@color/colorOrder"
                     android:buttonTint="@color/colorOrderDark"
-                    android:elevation="2dp"
                     android:shadowColor="@color/colorOrderDark"
+                    android:elevation="2dp"
                     android:text="Order" />
+
+                <RadioButton
+                    android:id="@+id/radioBtn42"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/color42"
+                    android:buttonTint="@color/color42Dark"
+                    android:shadowColor="@color/color42Dark"
+                    android:elevation="2dp"
+                    android:text="42" />
 
             </RadioGroup>
         </LinearLayout>

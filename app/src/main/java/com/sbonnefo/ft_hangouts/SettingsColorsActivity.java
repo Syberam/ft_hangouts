@@ -26,6 +26,7 @@ public class SettingsColorsActivity extends AppCompatActivity {
             case R.style.AppThemeAssembly: grpRadioColors.check(R.id.radioBtnAssembly); break;
             case R.style.AppThemeFederation: grpRadioColors.check(R.id.radioBtnFederation); break;
             case R.style.AppThemeOrder: grpRadioColors.check(R.id.radioBtnOrder); break;
+            case R.style.AppTheme42: grpRadioColors.check(R.id.radioBtn42); break;
             default: grpRadioColors.check(R.id.radioBtnAndroid); break;
         }
 
@@ -39,12 +40,13 @@ public class SettingsColorsActivity extends AppCompatActivity {
                     case R.id.radioBtnAssembly: MainActivity.setCurrentTheme(R.style.AppThemeAssembly); break;
                     case R.id.radioBtnFederation: MainActivity.setCurrentTheme(R.style.AppThemeFederation); break;
                     case R.id.radioBtnOrder: MainActivity.setCurrentTheme(R.style.AppThemeOrder); break;
+                    case R.id.radioBtn42: MainActivity.setCurrentTheme(R.style.AppTheme42); break;
                     default: MainActivity.setCurrentTheme(R.style.AppTheme); break;
                 }
                 SettingsColorsActivity.this.finish();
                 SettingsColorsActivity.this.startActivity(
                         new Intent(SettingsColorsActivity.this,
-                                SettingsColorsActivity.class));
+                                MainActivity.class));
 
 
             }

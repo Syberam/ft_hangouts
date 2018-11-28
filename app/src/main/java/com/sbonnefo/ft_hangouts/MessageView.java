@@ -1,5 +1,6 @@
 package com.sbonnefo.ft_hangouts;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

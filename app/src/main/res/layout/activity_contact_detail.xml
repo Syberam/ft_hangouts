@@ -29,7 +29,8 @@
                 android:layout_toStartOf="@+id/btnEdit"
                 android:layout_toLeftOf="@+id/btnEdit"
                 app:srcCompat="@android:drawable/ic_menu_delete"
-                android:contentDescription="@string/delete_contact" />
+                android:contentDescription="@string/delete_contact"
+                android:elevation="5dp"/>
 
             <ImageButton
                 android:id="@+id/btnEdit"
@@ -47,97 +48,100 @@
                 android:layout_marginRight="0dp"
                 app:srcCompat="@android:drawable/ic_menu_edit"
                 tools:ignore="NotSibling"
-                android:contentDescription="@string/edit_contact" />
+                android:contentDescription="@string/edit_contact"
+                android:elevation="5dp"/>
         </RelativeLayout>
 
-        <ScrollView
-            android:id="@+id/scrollInfo"
-            android:layout_width="match_parent"
-            android:layout_height="460dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="51dp"
-            android:layout_marginBottom="0dp"
-            android:background="@color/colorPrimary">
+    <ScrollView
+        android:id="@+id/scrollInfo"
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginBottom="0dp"
+        android:background="?attr/colorPrimaryLight">
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblFullname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:gravity="center_horizontal|center"
+                android:text="@string/firstname"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-                <TextView
-                    android:id="@+id/lblFullname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal|center"
-                    android:text="@string/firstname"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+            <TextView
+                android:id="@+id/lblPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center"
+                android:text="@string/phone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-                <TextView
-                    android:id="@+id/lblPhone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal|center"
-                    android:text="@string/phone"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="160dp"
+                <ImageButton
+                    android:id="@+id/btnSms"
+                    android:layout_width="80dp"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:contentDescription="@string/send_sms"
+                    android:elevation="5dp"
+                    app:srcCompat="@android:drawable/ic_dialog_email" />
 
-                    <ImageButton
-                        android:id="@+id/btnSms"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@android:drawable/ic_dialog_email"
-                        android:contentDescription="@string/send_sms" />
-
-                    <ImageButton
-                        android:id="@+id/btnCall"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@android:drawable/ic_menu_call"
-                        android:contentDescription="@string/make_call" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/lblEmail"
-                    android:layout_width="match_parent"
+                <ImageButton
+                    android:id="@+id/btnCall"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center"
-                    android:text="@string/email"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-                <TextView
-                    android:id="@+id/lblAddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center"
-                    android:text="@string/address"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-                <TextView
-                    android:id="@+id/lblBirth"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center"
-                    android:text="@string/birth"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-                <TextView
-                    android:id="@+id/lblNotes"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/notes"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
+                    android:contentDescription="@string/make_call"
+                    app:srcCompat="@android:drawable/ic_menu_call"
+                    android:elevation="5dp"/>
             </LinearLayout>
-        </ScrollView>
+
+            <TextView
+                android:id="@+id/lblEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center"
+                android:text="@string/email"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/lblAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center"
+                android:text="@string/address"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/lblBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center"
+                android:text="@string/birth"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/lblNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/notes"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        </LinearLayout>
+    </ScrollView>
 
     </RelativeLayout>

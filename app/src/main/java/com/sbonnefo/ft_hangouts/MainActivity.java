@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseManager _databaseManager;
     private Date            _pauseDate;
     private boolean         _toastDate = false;
-    static int             _currentTheme = R.style.AppThemeAlliance;
+    static int             _currentTheme = R.style.AppTheme;
 
 
     @Override
@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         switch ( item.getItemId()){
             case R.id.menu_options:
                 Intent intent = new Intent(MainActivity.this, SettingsColorsActivity.class);
+                MainActivity.this.finish();
                 startActivity( intent );
                 return true;
             default:

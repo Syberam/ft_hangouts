@@ -17,7 +17,7 @@
 
     <TextView
         android:id="@+id/txtMessageContent"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_marginRight="10dp"
@@ -29,7 +29,8 @@
         android:paddingRight="10dp"
         android:paddingBottom="5dp"
         android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="?attr/colorPrimaryDark" />
 
     <TextView
         android:id="@+id/txtMessageDate"

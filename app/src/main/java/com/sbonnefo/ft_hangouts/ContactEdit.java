@@ -3,6 +3,7 @@ package com.sbonnefo.ft_hangouts;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.PhoneNumberUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -64,7 +65,10 @@ public class ContactEdit extends AppCompatActivity {
         public void onClick(View v) {
             String  lastname = _lastname.getText().toString();
             String  firstname = _firstname.getText().toString();
-            String  phone = _phone.getText().toString();
+            String  phone = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                phone = PhoneNumberUtils.normalizeNumber(_phone.getText().toString());
+            }
             String  email = _email.getText().toString();
             String  address = _address.getText().toString();
             String  notes = _notes.getText().toString();
