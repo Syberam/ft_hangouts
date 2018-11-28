@@ -34,7 +34,8 @@
             android:layout_marginEnd="0dp"
             android:layout_marginRight="0dp"
             app:srcCompat="@android:drawable/ic_menu_save"
-            tools:ignore="NotSibling" />
+            tools:ignore="NotSibling"
+            android:contentDescription="@string/save_button" />
     </RelativeLayout>
 
     <ScrollView
@@ -63,12 +64,14 @@
                 android:text="@string/firstname" />
 
             <EditText
+                android:labelFor="@string/firstname"
                 android:id="@+id/editFirstname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
+                android:autofillHints="@string/firstname"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName" tools:targetApi="o"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/lblLastname"
@@ -77,12 +80,14 @@
                 android:text="@string/lastname" />
 
             <EditText
+                android:labelFor="@string/lastname"
                 android:id="@+id/editLastname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
+                android:autofillHints="@string/lastname"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName" tools:targetApi="o"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/lblPhone"
@@ -91,12 +96,14 @@
                 android:text="@string/phone" />
 
             <EditText
+                android:labelFor="@string/phone"
                 android:id="@+id/editPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
+                android:autofillHints="@string/phone"
                 android:ems="10"
-                android:inputType="phone" />
+                android:inputType="phone" tools:targetApi="o"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/lblEmail"
@@ -105,12 +112,14 @@
                 android:text="@string/email" />
 
             <EditText
+                android:labelFor="@string/email"
                 android:id="@+id/editEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
+                android:autofillHints="@string/email"
                 android:ems="10"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress" tools:targetApi="o"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/lblAddress"
@@ -119,26 +128,30 @@
                 android:text="@string/address" />
 
             <EditText
+                android:labelFor="@string/address"
                 android:id="@+id/editAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
+                android:autofillHints="@string/address"
                 android:ems="10"
-                android:inputType="text|textPostalAddress" />
+                android:inputType="text|textPostalAddress" tools:targetApi="o"
+                tools:ignore="LabelFor" />
 
             <TextView
-                android:id="@+id/labelBirth"
+                android:id="@+id/lblBirth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/birth" />
 
             <EditText
+                android:labelFor="@string/birth"
                 android:id="@+id/editBirth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
+                android:autofillHints="@string/birth"
                 android:ems="10"
-                android:inputType="datetime|date" />
+                android:inputType="datetime|date" tools:targetApi="o"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/lblNotes"
@@ -147,15 +160,18 @@
                 android:text="@string/notes" />
 
             <EditText
+                android:labelFor="@string/notes"
                 android:id="@+id/editNotes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
+                android:autofillHints="@string/notes"
                 android:clickable="true"
                 android:cursorVisible="true"
                 android:ems="10"
-                android:gravity="top|left"
-                android:inputType="textMultiLine|textLongMessage" />
+                android:gravity="start|end"
+                android:inputType="textMultiLine|textLongMessage" tools:targetApi="o"
+                android:focusable="true"
+                tools:ignore="LabelFor" />
         </LinearLayout>
     </ScrollView>
 

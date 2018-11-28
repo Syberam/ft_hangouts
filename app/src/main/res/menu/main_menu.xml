@@ -5,6 +5,6 @@
     <item android:id="@+id/menu_options"
         android:orderInCategory="100"
         app:showAsAction="never"
-        android:title="Options" />
+        android:title="@string/settings" />
 
 </menu>

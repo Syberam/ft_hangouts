@@ -30,7 +30,7 @@
                 android:layout_toLeftOf="@+id/btnEdit"
                 app:srcCompat="@android:drawable/ic_menu_delete"
                 android:contentDescription="@string/delete_contact"
-                android:elevation="5dp"/>
+                android:elevation="5dp" tools:targetApi="lollipop"/>
 
             <ImageButton
                 android:id="@+id/btnEdit"
@@ -49,7 +49,7 @@
                 app:srcCompat="@android:drawable/ic_menu_edit"
                 tools:ignore="NotSibling"
                 android:contentDescription="@string/edit_contact"
-                android:elevation="5dp"/>
+                android:elevation="5dp" tools:targetApi="lollipop"/>
         </RelativeLayout>
 
     <ScrollView
@@ -99,7 +99,7 @@
                     android:layout_height="match_parent"
                     android:contentDescription="@string/send_sms"
                     android:elevation="5dp"
-                    app:srcCompat="@android:drawable/ic_dialog_email" />
+                    app:srcCompat="@android:drawable/ic_dialog_email" tools:targetApi="lollipop"/>
 
                 <ImageButton
                     android:id="@+id/btnCall"
@@ -107,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/make_call"
                     app:srcCompat="@android:drawable/ic_menu_call"
-                    android:elevation="5dp"/>
+                    android:elevation="5dp" tools:targetApi="lollipop"/>
             </LinearLayout>
 
             <TextView

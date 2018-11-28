@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foregroundGravity="center_vertical|center_horizontal"
     tools:context=".SettingsColorsActivity">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +29,7 @@
             <RadioGroup
                 android:id="@+id/grpRadioColors"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
                 android:layout_marginBottom="50dp"
@@ -51,7 +47,7 @@
                     android:buttonTint="@color/colorAndroidDark"
                     android:shadowColor="@color/colorPrimaryDark"
                     android:elevation="2dp"
-                    android:text="Android" />
+                    android:text="@string/android_theme" tools:targetApi="lollipop"/>
 
                 <RadioButton
                     android:id="@+id/radioBtnAlliance"
@@ -63,7 +59,7 @@
                     android:buttonTint="@color/colorAllianceDark"
                     android:shadowColor="@color/colorAllianceDark"
                     android:elevation="2dp"
-                    android:text="Alliance" />
+                    android:text="@string/alliance_theme" tools:targetApi="lollipop"/>
 
                 <RadioButton
                     android:id="@+id/radioBtnAssembly"
@@ -75,7 +71,7 @@
                     android:buttonTint="@color/colorAssemblyDark"
                     android:shadowColor="@color/colorAssemblyDark"
                     android:elevation="2dp"
-                    android:text="Assembly" />
+                    android:text="@string/assembly_theme" tools:targetApi="lollipop"/>
 
                 <RadioButton
                     android:id="@+id/radioBtnFederation"
@@ -87,7 +83,7 @@
                     android:buttonTint="@color/colorFederationDark"
                     android:shadowColor="@color/colorFederationDark"
                     android:elevation="2dp"
-                    android:text="Federation" />
+                    android:text="@string/federation_theme" tools:targetApi="lollipop"/>
 
                 <RadioButton
                     android:id="@+id/radioBtnOrder"
@@ -99,7 +95,7 @@
                     android:buttonTint="@color/colorOrderDark"
                     android:shadowColor="@color/colorOrderDark"
                     android:elevation="2dp"
-                    android:text="Order" />
+                    android:text="@string/order_theme" tools:targetApi="lollipop"/>
 
                 <RadioButton
                     android:id="@+id/radioBtn42"
@@ -111,10 +107,8 @@
                     android:buttonTint="@color/color42Dark"
                     android:shadowColor="@color/color42Dark"
                     android:elevation="2dp"
-                    android:text="42" />
+                    android:text="@string/_42_theme" tools:targetApi="lollipop"/>
 
             </RadioGroup>
         </LinearLayout>
-    </ScrollView>
-
-</RelativeLayout>
+</ScrollView>

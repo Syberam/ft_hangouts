@@ -35,7 +35,7 @@
         android:scaleType="fitCenter"
         android:text=""
         android:elevation="4dp"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@android:drawable/ic_menu_add" tools:targetApi="lollipop"/>
 
 
 </RelativeLayout>
