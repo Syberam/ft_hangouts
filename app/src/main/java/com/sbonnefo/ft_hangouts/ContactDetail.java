@@ -85,12 +85,11 @@ public class ContactDetail extends AppCompatActivity {
         _btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String[] contactNames = {_contact.getFirstname(), _contact.getName()};
                 AlertDialog.Builder deleteContactAlert = new AlertDialog.Builder(ContactDetail.this);
 
                 deleteContactAlert.setTitle(R.string.deleteContactTitle);
 
-                deleteContactAlert.setMessage(getString(R.string.warningDeleteContact, contactNames)); //getString(R.string.warningDeleteContact, contactFullname));
+                deleteContactAlert.setMessage(getString(R.string.warningDeleteContact, _contact.getFirstname(), _contact.getName()));
                 deleteContactAlert.setPositiveButton(R.string.deleteBtn, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -98,7 +97,7 @@ public class ContactDetail extends AppCompatActivity {
                         databaseManager.deleteContact(_contact);
                         databaseManager.close();
                         Toast.makeText(ContactDetail.this,
-                                getString(R.string.contact_delete, contactNames), Toast.LENGTH_LONG).show();
+                                getString(R.string.contact_delete, _contact.getFirstname(), _contact.getName()), Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });
