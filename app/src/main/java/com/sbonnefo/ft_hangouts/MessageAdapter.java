@@ -26,11 +26,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageViewHolder> {
 
         if (viewType == 1)
             view = LayoutInflater.from(
-                        viewGroup.getContext()).inflate(R.layout.recycler_view_item_message_out,
+                        viewGroup.getContext()).inflate(R.layout.recycler_view_item_message_in,
                         viewGroup, false);
         else
                 view = LayoutInflater.from(viewGroup.getContext())
-                        .inflate(R.layout.recycler_view_item_message_in,
+                        .inflate(R.layout.recycler_view_item_message_out,
                                 viewGroup, false);
 
 

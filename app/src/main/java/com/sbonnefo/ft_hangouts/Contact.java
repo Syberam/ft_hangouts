@@ -1,16 +1,29 @@
 package com.sbonnefo.ft_hangouts;
 
+
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.database.Cursor;
 import android.media.Image;
+import android.net.Uri;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+
+
+
 
 public class Contact implements Serializable {
     private int _id;
     private String _name, _firstname, _email, _address, _phone, _notes;
     private Image _avatar;
     private Date _birth;
-
+    final int SMS_IN = 1;
 
     Contact(){
         _id = -1;
@@ -108,6 +121,29 @@ public class Contact implements Serializable {
     public String   getNotes(){ return (_notes); }
     public Date     getBirth(){ return (_birth); }
     public Image    getAvatar(){ return (_avatar); }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    public List<Message> getMessages(Activity activity){
+        List<Message> messages = new ArrayList<>();
+
+        ContentResolver contentResolver = activity.getContentResolver();
+        Cursor cursor = contentResolver.query(Uri.parse("content://sms"),
+                                                        new String[] { "address", "body", "date", "type"},
+                "address = ?", new String[] {this.getPhone()}, "date asc", null);
+
+        cursor.moveToFirst();
+
+        while (! cursor.isAfterLast()){
+            Date        messageDate = new Date(cursor.getLong(2));
+
+            boolean io = true; //cursor.getInt(1) == 1;
+            Message message = new Message(cursor.getInt(3) == SMS_IN, this, cursor.getString(1), messageDate);
+            messages.add( message );
+            cursor.moveToNext();
+        }
+        return messages;
+    }
 
 
     public String toString() {

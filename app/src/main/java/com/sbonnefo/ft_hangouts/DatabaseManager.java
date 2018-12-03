@@ -180,7 +180,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
         cursor.close();
         return contacts;
     }
-
+/*
     public List<Message> getMessages(Contact contact){
         List<Message> messages = new ArrayList<>();
 
@@ -208,6 +208,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
         }
         return messages;
     }
-
+*/
 
 }
