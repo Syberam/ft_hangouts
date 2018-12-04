@@ -40,7 +40,6 @@ public class MessageView extends AppCompatActivity {
         setTheme(MainActivity.getCurrentTheme());
         setContentView(R.layout.activity_message_view);
 
-
         _contact = (Contact) getIntent().getSerializableExtra("Contact");
         _recyclerViewMessages = findViewById(R.id.rclMessagesView);
         _btnSend = findViewById(R.id.btnSend);
@@ -57,8 +56,11 @@ public class MessageView extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.READ_SMS, Manifest.permission.SEND_SMS},
+                    new String[]{Manifest.permission.READ_SMS, Manifest.permission.SEND_SMS, Manifest.permission.RECEIVE_SMS},
                     MY_PERMISSIONS_REQUEST_READ_SMS);
+        }
+        else {
+            refreshSmsInbox();
         }
 }
 
@@ -71,46 +73,28 @@ public class MessageView extends AppCompatActivity {
                     new String[]{Manifest.permission.READ_SMS, Manifest.permission.SEND_SMS},
                     MY_PERMISSIONS_REQUEST_READ_SMS);
         }
-    //    else
-    //        finish();
+        else
+            refreshSmsInbox();
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[],
                                            int[] grantResults) {
         Log.i("PERMISSION ", "ICI");
-
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == MY_PERMISSIONS_REQUEST_READ_SMS) {
-                if (grantResults.length ==1
+                if (grantResults.length == 1
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "Read SMS permission denied", Toast.LENGTH_SHORT).show();
-                 //   finish();
-                } else {
-
                     refreshSmsInbox();
-                    _btnSend.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            String smsContent = _sms.getText().toString().trim();
-                            if (!smsContent.isEmpty()) {
-                                sendSms(_contact.getPhone(),  smsContent);
-                                _sms.setText("");
-                                _recyclerViewMessages.removeAllViews();
-                                refreshSmsInbox();
-                                _recyclerViewMessages.refreshDrawableState();
-
-                            } else {
-                                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                                inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                            }
-                        }
-                    });
+                } else {
+                    finish();
+                    Toast.makeText(this, "SMS permission denied", Toast.LENGTH_SHORT).show();
                 }
             }
             else{
-              super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-                Toast.makeText(this, "Read SMS permission denied", Toast.LENGTH_SHORT).show();
-                //finish();
+                refreshSmsInbox();
+            //    Toast.makeText(this, "Read SMS permission denied", Toast.LENGTH_SHORT).show();
+            //  finish();
         }
     }
 
@@ -120,6 +104,24 @@ public class MessageView extends AppCompatActivity {
             _messages = _contact.getMessages(this);
         }
         _recyclerViewMessages.setAdapter(new MessageAdapter(_messages));
+
+        _btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String smsContent = _sms.getText().toString().trim();
+                if (!smsContent.isEmpty()) {
+                    sendSms(_contact.getPhone(),  smsContent);
+                    _sms.setText("");
+                    _recyclerViewMessages.removeAllViews();
+                    refreshSmsInbox();
+                    _recyclerViewMessages.refreshDrawableState();
+
+                } else {
+                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
+            }
+        });
 
 
     }
