@@ -1,13 +1,17 @@
 package com.sbonnefo.ft_hangouts;
 
+import android.content.Context;
 import android.content.Intent;
+
+import android.net.Uri;
+
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 
 public class PreviewViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -44,6 +48,14 @@ public class PreviewViewHolder extends RecyclerView.ViewHolder implements View.O
             public void onClick(View v) {
                 Intent intent = new Intent(itemView.getContext(), MessageView.class);
                 intent.putExtra("Contact", _contact);
+                itemView.getContext().startActivity(intent);
+            }
+        });
+
+        _btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + _contact.getPhone()));
                 itemView.getContext().startActivity(intent);
             }
         });
