@@ -1,10 +1,10 @@
 package com.sbonnefo.ft_hangouts;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 
+import android.content.pm.PackageManager;
 import android.net.Uri;
-
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -21,10 +21,14 @@ public class PreviewViewHolder extends RecyclerView.ViewHolder implements View.O
     private TextView    _txtContactFullname;
     private ImageView   _imgAvatar;
 
+    private View        _view;
+
 
     public PreviewViewHolder(View itemView){
         super(itemView);
         itemView.setOnClickListener(this);
+
+        _view = itemView;
 
         _txtContactFullname = (TextView) itemView.findViewById(R.id.txtContact);
         _imgAvatar = (ImageView) itemView.findViewById(R.id.imgAvatar);
@@ -52,13 +56,7 @@ public class PreviewViewHolder extends RecyclerView.ViewHolder implements View.O
             }
         });
 
-        _btnCall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + _contact.getPhone()));
-                itemView.getContext().startActivity(intent);
-            }
-        });
+        _btnCall.setOnClickListener(new CallClickListener((Activity) _view.getContext(), _contact));
     }
 
     public Contact  getContact(){ return _contact; }
@@ -70,5 +68,8 @@ public class PreviewViewHolder extends RecyclerView.ViewHolder implements View.O
 
 
     }
+
+
+
 
 }

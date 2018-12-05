@@ -2,6 +2,7 @@ package com.sbonnefo.ft_hangouts;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
@@ -32,6 +33,8 @@ public class MessageView extends AppCompatActivity {
     List<Message>               _messages;
     private static final int    MY_PERMISSIONS_REQUEST_READ_SMS = 19898;
     private static final int    SMS_MAX_LEN = 160;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,8 +96,6 @@ public class MessageView extends AppCompatActivity {
             }
             else{
                 refreshSmsInbox();
-            //    Toast.makeText(this, "Read SMS permission denied", Toast.LENGTH_SHORT).show();
-            //  finish();
         }
     }
 

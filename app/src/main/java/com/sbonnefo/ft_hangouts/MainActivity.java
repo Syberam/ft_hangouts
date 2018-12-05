@@ -3,6 +3,9 @@ package com.sbonnefo.ft_hangouts;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.provider.CalendarContract;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private Date            _pauseDate;
     private boolean         _toastDate = false;
     static int             _currentTheme = R.style.AppTheme;
+    private static final int    MY_PERMISSIONS_REQUEST_CALL_PHONE = 369;
+
 
 
     @Override
@@ -38,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
         setTheme(MainActivity.getCurrentTheme());
         setContentView( R.layout.activity_main );
-
 
         btnGoContact = (ImageButton) findViewById( R.id.btnContact);
         btnGoContact.setOnClickListener(new View.OnClickListener() {
@@ -149,4 +153,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
 }

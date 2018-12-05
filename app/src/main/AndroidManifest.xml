@@ -29,6 +29,7 @@
         <activity android:name=".ContactDetail" />
         <activity android:name=".MessageView" />
         <activity android:name=".SettingsColorsActivity"></activity>
+
     </application>
 
 </manifest>
