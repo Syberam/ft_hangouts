@@ -1,5 +1,6 @@
 package com.sbonnefo.ft_hangouts;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +18,6 @@ public class ContactEdit extends AppCompatActivity {
 
     private final static int    EDIT_CODE = 1;
     private Contact     _contact;
-    private ImageButton _btnSave;
     private EditText    _firstname, _lastname, _phone, _email, _address, _birth, _notes;
 
     @Override
@@ -31,7 +31,7 @@ public class ContactEdit extends AppCompatActivity {
         setContentView(R.layout.activity_contact_card);
 
         _contact = (Contact) getIntent().getSerializableExtra("Contact");
-        _btnSave = (ImageButton) findViewById(R.id.btnSave);
+        ImageButton _btnSave = (ImageButton) findViewById(R.id.btnSave);
         _btnSave.setOnClickListener(btnSaveListener);
 
         _firstname = (EditText) findViewById(R.id.editFirstname);
@@ -61,11 +61,12 @@ public class ContactEdit extends AppCompatActivity {
     }
 
     private View.OnClickListener btnSaveListener = new View.OnClickListener() {
+        @SuppressLint("StringFormatMatches")
         @Override
         public void onClick(View v) {
             String  lastname = _lastname.getText().toString();
             String  firstname = _firstname.getText().toString();
-            String[]  contactNames = {firstname, lastname};
+
             String  phone = null;
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                 phone = PhoneNumberUtils.normalizeNumber(_phone.getText().toString());
@@ -103,12 +104,12 @@ public class ContactEdit extends AppCompatActivity {
                 DatabaseManager databaseManager = new DatabaseManager(ContactEdit.this);
                 if (_contact.getId() != -1 && databaseManager.updateContact(_contact) != -1) {
                     Toast.makeText(ContactEdit.this,
-                            getString(R.string.toast_contact_update, contactNames)
+                            getString(R.string.toast_contact_update, _contact.getFirstname(), _contact.getName())
                             , Toast.LENGTH_LONG).show();
                 }
                 else if (databaseManager.insertContact(_contact) != -1) {
                     Toast.makeText(ContactEdit.this,
-                            getString(R.string.toast_contact_save, contactNames)
+                            getString(R.string.toast_contact_save,  _contact.getFirstname(), _contact.getName())
                             , Toast.LENGTH_LONG).show();
                 }
                 else
