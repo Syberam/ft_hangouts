@@ -12,7 +12,6 @@ Create an app to manage contacts, send them messages and call them.
 
 <p align="center">
   <img width="20%" src="/ScreenShots__ft_hangouts/goto_option_menu.png">
-  &#10144;
   <img width="20%" src="/ScreenShots__ft_hangouts/sshot_design_menu.png">
 </p>
 
