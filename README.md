@@ -14,7 +14,8 @@ Create an app to manage contacts, send them messages and call them.
 
 <p align="center">
   <img width="20%" src="https://raw.githubusercontent.com/Syberam/ft_hangouts/master/ScreenShots__ft_hangouts/Screenshot_1543422490.png?token=AXJhythZ5JDItNpOrnay-qVmTEenu2loks5cGhHywA%3D%3D">
-
+	U+27A0
+  <p>   </p>
   <img width="20%" src="https://raw.githubusercontent.com/Syberam/ft_hangouts/master/ScreenShots__ft_hangouts/Screenshot_1543422490.png?token=AXJhythZ5JDItNpOrnay-qVmTEenu2loks5cGhHywA%3D%3D">
 </p>
 
