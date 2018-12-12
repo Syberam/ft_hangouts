@@ -2,10 +2,13 @@
 ## 42 project : initiation to Android
 Create an app to manage contacts, send them messages and call them.
 > Learn :
-> - use sqlite to store contacts *[rule : not use android contacts manager ]*
+> - use sqlite to store contacts *[rule : not use android contacts manager cf: [subject_fr](/subject_ft_hangouts.fr.pdf)]*
 > - how to organise design, and how use multiple templates
 > - i18n
-> - permissions.
+> - permissionsi.
+> - correctly use onCreate, onResume, onStop etc.
+
+
 
 ## Switch between deferent design with settings menu
 
