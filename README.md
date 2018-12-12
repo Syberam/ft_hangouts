@@ -8,5 +8,11 @@ Create an app to manage contacts, send them messages and call them.
 > - permissions.
 
 ## Switch between deferent design with settings menu
-![20%x](<https://raw.githubusercontent.com/Syberam/ft_hangouts/master/ScreenShots__ft_hangouts/Screenshot_1543422490.png> =20%x)
+
+![20%x] (<https://raw.githubusercontent.com/Syberam/ft_hangouts/master/ScreenShots__ft_hangouts/Screenshot_1543422490.png> =20%x)
+
+
+<p align="center">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/Syberam/ft_hangouts/master/ScreenShots__ft_hangouts/Screenshot_1543422490.png/460/300">
+</p>
 
