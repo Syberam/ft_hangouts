@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactEdit">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/ic_launcher_background">
+
+        <ImageButton
+            android:id="@+id/btnSave"
+            android:layout_width="42dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="318dp"
+            android:layout_marginLeft="318dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            app:srcCompat="@android:drawable/ic_menu_save"
+            tools:ignore="NotSibling"
+            android:contentDescription="@string/save_button" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollInfo"
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginBottom="0dp"
+        android:background="?attr/colorPrimaryLight">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblFirstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/firstname" />
+
+            <EditText
+                android:labelFor="@string/firstname"
+                android:id="@+id/editFirstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/firstname"
+                android:ems="10"
+                android:inputType="textPersonName" tools:targetApi="o"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/lblLastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lastname" />
+
+            <EditText
+                android:labelFor="@string/lastname"
+                android:id="@+id/editLastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/lastname"
+                android:ems="10"
+                android:inputType="textPersonName" tools:targetApi="o"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/lblPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/phone" />
+
+            <EditText
+                android:labelFor="@string/phone"
+                android:id="@+id/editPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/phone"
+                android:ems="10"
+                android:inputType="phone" tools:targetApi="o"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/lblEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/email" />
+
+            <EditText
+                android:labelFor="@string/email"
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/email"
+                android:ems="10"
+                android:inputType="textEmailAddress" tools:targetApi="o"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/lblAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/address" />
+
+            <EditText
+                android:labelFor="@string/address"
+                android:id="@+id/editAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/address"
+                android:ems="10"
+                android:inputType="text|textPostalAddress" tools:targetApi="o"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/lblBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/birth" />
+
+            <EditText
+                android:labelFor="@string/birth"
+                android:id="@+id/editBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/birth"
+                android:ems="10"
+                android:inputType="datetime|date" tools:targetApi="o"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/lblNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/notes" />
+
+            <EditText
+                android:labelFor="@string/notes"
+                android:id="@+id/editNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/notes"
+                android:clickable="true"
+                android:cursorVisible="true"
+                android:ems="10"
+                android:gravity="start|end"
+                android:inputType="textMultiLine|textLongMessage" tools:targetApi="o"
+                android:focusable="true"
+                tools:ignore="LabelFor" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

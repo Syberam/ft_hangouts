@@ -1,0 +1,52 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="colorPrimaryLight">@color/colorAndroidLight</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="AppThemeAlliance" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="colorPrimaryLight">@color/colorAllianceLight</item>
+        <item name="colorPrimary">@color/colorAlliance</item>
+        <item name="colorPrimaryDark">@color/colorAllianceDark</item>
+    </style>
+
+    <style name="AppThemeAssembly" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="colorPrimaryLight">@color/colorAssemblyLight</item>
+        <item name="colorPrimary">@color/colorAssembly</item>
+        <item name="colorPrimaryDark">@color/colorAssemblyDark</item>
+    </style>
+
+    <style name="AppThemeFederation" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="colorPrimaryLight">@color/colorFederationLight</item>
+        <item name="colorPrimary">@color/colorFederation</item>
+        <item name="colorPrimaryDark">@color/colorFederationDark</item>
+    </style>
+
+    <style name="AppThemeOrder" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="colorPrimaryLight">@color/colorOrderLight</item>
+        <item name="colorPrimary">@color/colorOrder</item>
+        <item name="colorPrimaryDark">@color/colorOrderDark</item>
+    </style>
+
+    <style name="AppTheme42" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="colorPrimaryLight">@color/color42Light</item>
+        <item name="colorPrimary">@color/color42</item>
+        <item name="colorPrimaryDark">@color/color42Dark</item>
+    </style>
+
+</resources>

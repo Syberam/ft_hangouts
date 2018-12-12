@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ft_hangouts</string>
+
+
+    <string name="hello_blank_fragment">Γεια σου κενό κομμάτι</string>
+    <string name="firstname">Ονομα</string>
+    <string name="lastname">Επίθετο</string>
+    <string name="phone">Τηλεφωνικό νούμερο</string>
+    <string name="email">Διεύθυνση ηλεκτρονικού ταχυδρομείου</string>
+    <string name="address">Διεύθυνση</string>
+    <string name="notes">Σημειώσεις</string>
+    <string name="birth">Γενέθλια</string>
+    <string name="add_contact">Προσθέστε μια νέα επαφή</string>
+    <string name="send_sms">Αποστολή SMS</string>
+    <string name="edit_contact">Επεξεργασία επαφής</string>
+    <string name="make_call">Κλήση</string>
+    <string name="img_avatar">Επικοινωνήστε με την εικόνα</string>
+    <string name="delete_contact">Διαγραφή της επαφής</string>
+    <string name="toast_empty_field">Αδειάστε το όνομα, το επώνυμο ή τον αριθμό τηλεφώνου</string>
+
+    <string name="NA">NA</string>
+
+    <string name="toast_contact_save">Η νέα επαφή αποθηκεύτηκε: %s %S</string>
+    <string name="toast_contact_save_error">Σφάλμα: η επαφή δεν αποθηκεύτηκε</string>
+    <string name="toast_contact_update">Επαφές ενημέρωσης: %s %S</string>
+    <string name="contact_delete">Η επαφή %s %S έχει διαγραφεί</string>
+    <string name="warningDeleteContact">Όλες οι πληροφορίες σχετικά με το %s %S θα διαγραφούν!</string>
+    <string name="deleteBtn">Διαγράφω</string>
+    <string name="cancelBtn">Ματαίωση</string>
+    <string name="deleteContactTitle">Διαγραφή οριστικής επαφής</string>
+    <string name="send_the_message">Στείλτε το μήνυμα</string>
+    <string name="title_activity_settings">Ρυθμίσεις</string>
+
+
+    <string name="customApp">Προσαρμόστε τα ft_hangouts σας</string>
+    <string name="customAppInfo">Επιλέξτε ένα σχέδιο χρώματος</string>
+    <string name="settings">Ρυθμίσεις</string>
+    <string name="save_button">Αποθήκευση κουμπί</string>
+
+</resources>

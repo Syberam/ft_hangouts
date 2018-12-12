@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d9fbe9</color>
+    <color name="colorPrimaryDark">#00574b</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorAndroidLight">#EBfCFA</color>
+    <color name="colorAndroid">@color/colorPrimary</color>
+    <color name="colorAndroidDark">@color/colorPrimaryDark</color>
+
+    <color name="colorAllianceLight">#BBFFDD</color>
+    <color name="colorAlliance">#2eb368</color>
+    <color name="colorAllianceDark">#0e4e2a</color>
+
+    <color name="colorFederationLight">#99CCFF</color>
+    <color name="colorFederation">#3365c8</color>
+    <color name="colorFederationDark">#0e2d69</color>
+
+    <color name="colorOrderLight">#FFC5B0</color>
+    <color name="colorOrder">#ef503f</color>
+    <color name="colorOrderDark">#63160e</color>
+
+    <color name="colorAssemblyLight">#BB78ff</color>
+    <color name="colorAssembly">#8845bc</color>
+    <color name="colorAssemblyDark">#421664</color>
+
+    <color name="color42Light">#AAAAAA</color>
+    <color name="color42">#555555</color>
+    <color name="color42Dark">#222222</color>
+</resources>
