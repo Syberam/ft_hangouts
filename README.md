@@ -10,12 +10,9 @@ Create an app to manage contacts, send them messages and call them.
 ## Switch between deferent design with settings menu
 
 
-
-
 <p align="center">
-  <img width="20%" src="https://raw.githubusercontent.com/Syberam/ft_hangouts/master/ScreenShots__ft_hangouts/Screenshot_1543422490.png?token=AXJhythZ5JDItNpOrnay-qVmTEenu2loks5cGhHywA%3D%3D">
+  <img width="20%" src="https://raw.githubusercontent.com/Syberam/ft_hangouts/master/ScreenShots__ft_hangouts/goto_option_menu.png>
   <p>&#10144;</p>
-  <img width="20%" src="https://raw.githubusercontent.com/Syberam/ft_hangouts/master/ScreenShots__ft_hangouts/Screenshot_1543422490.png?token=AXJhythZ5JDItNpOrnay-qVmTEenu2loks5cGhHywA%3D%3D">
-</p>
+  <img width="20%" src="https://raw.githubusercontent.com/Syberam/ft_hangouts/master/ScreenShots__ft_hangouts/sshot_design_menu.png</p>
 
 
